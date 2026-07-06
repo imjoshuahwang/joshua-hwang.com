@@ -17,6 +17,50 @@ Important files:
 
 There is no build step, no package manager, no framework, and no server code.
 
+## Current deployment status
+
+Completed:
+- GitHub repository created: `https://github.com/imjoshuahwang/joshua-hwang.com`
+- Site files pushed to GitHub on `main`
+- Vercel project created: `joshua-hwang-com`
+- Vercel production deployment is live:
+  - `https://joshua-hwang-com.vercel.app`
+  - deployment URL: `https://joshua-hwang-h9j45iu0f-imjoshuahwang-7950s-projects.vercel.app`
+- `joshua-hwang.com` and `www.joshua-hwang.com` were added to the Vercel project.
+
+Remaining:
+- DNS at Spaceship must be changed. The domain currently uses:
+  - `launch1.spaceship.net`
+  - `launch2.spaceship.net`
+
+Vercel says the current domain DNS is invalid because the apex still resolves to:
+- `54.149.79.189`
+- `34.216.117.25`
+
+## Required DNS records
+
+At Spaceship, either switch nameservers to Vercel:
+
+```text
+ns1.vercel-dns.com
+ns2.vercel-dns.com
+```
+
+Or keep Spaceship DNS and set these records:
+
+```text
+A      @    216.198.79.1
+A      @    64.29.17.1
+CNAME  www  6ae4d9d5121518cd.vercel-dns-017.com.
+```
+
+After DNS propagates, run:
+
+```text
+npx vercel domains verify joshua-hwang.com
+npx vercel domains verify www.joshua-hwang.com
+```
+
 ## Desired deployment
 
 Deploy the contents of this folder to `joshua-hwang.com`.

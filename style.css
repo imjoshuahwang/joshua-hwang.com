@@ -62,7 +62,9 @@ body {
 
 .contact-links {
   display: flex;
-  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px 14px;
   color: #000;
   font-size: 0.8rem;
 }
